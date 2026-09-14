@@ -1,0 +1,22 @@
+package {{package_name}}.integrations;
+{% if 'lattice' in addons %}
+import com.moulberry.lattice.Lattice;
+import com.moulberry.lattice.element.LatticeElements;
+import com.terraformersmc.modmenu.api.ConfigScreenFactory;{% endif %}
+import com.terraformersmc.modmenu.api.ModMenuApi;{% if 'lattice' in addons %}
+
+import static {{package_name}}.{{main_class}}.CONFIG_TITLE;
+import static {{package_name}}.{{main_class}}.configuration;{% endif %}
+
+public class ModMenuIntegration implements ModMenuApi {
+    {% if 'lattice' in addons %}
+    @Override
+    public ConfigScreenFactory<?> getModConfigScreenFactory() {
+        LatticeElements elements = LatticeElements.fromAnnotations(CONFIG_TITLE, configuration);
+        return parent -> Lattice.createConfigScreen(elements, configuration::saveToFile, parent);
+    }{% else %}
+    // @Override
+    // public ConfigScreenFactory<?> getModConfigScreenFactory() {
+    //     return parent ->
+    // }{% endif %}
+}

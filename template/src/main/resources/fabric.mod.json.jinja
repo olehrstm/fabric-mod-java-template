@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "{{mod_id}}",
+  "version": "${version}",
+  "name": "{{project_name}}",
+  "description": "Sample mod description",
+  "authors": ["Me"],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/myusername/{{mod_id}}"
+  },
+  "license": "{{license}}",
+  "icon": "assets/{{mod_id}}/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "main": ["{{package_name}}.{{main_class}}"],
+    "modmenu": ["{{package_name}}.integrations.ModMenuIntegration"]
+  },
+  "mixins": ["{{mod_id}}.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~26.2",
+    "java": ">=25",
+    "fabric-api": "*",
+    "modmenu": ">=20.0.1"
+  }
+}

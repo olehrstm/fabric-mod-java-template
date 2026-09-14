@@ -1,0 +1,40 @@
+# questions
+project_name:
+  type: str
+  help: What is the project name?
+  default: Template Mod
+
+mod_id:
+  type: str
+  help: What is the mod id?
+  default: template-mod
+
+main_class:
+  type: str
+  help: What is the main class name?
+  default: TemplateMod
+
+package_name:
+  type: str
+  help: What is the package name?
+  default: com.example
+
+license:
+  type: str
+  help: What license do you want to use?
+  default: MIT
+  choices:
+    - MIT
+    - Apache-2.0
+
+addons:
+  type: str
+  help: What addons do you want to include?
+  default: []
+  multiselect: true
+  choices:
+    - renovate
+    - release-please-github
+    - lattice
+
+_subdirectory: "template"
