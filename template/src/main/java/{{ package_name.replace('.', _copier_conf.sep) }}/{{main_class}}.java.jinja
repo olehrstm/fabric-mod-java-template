@@ -33,8 +33,9 @@ public class {{main_class}} implements ModInitializer {
     public void onInitialize() {
         // This code runs as soon as Minecraft is in a mod-load-ready state.
         // However, some things (like resources) may still be uninitialized.
-        // Proceed with mild caution.
-        {% if 'lattice' in addons %}Minecraft.getInstance().submit(() -> {
+        // Proceed with mild caution.{% if 'lattice' in addons %}
+
+        Minecraft.getInstance().submit(() -> {
             LatticeElements elements = LatticeElements.fromAnnotations(CONFIG_TITLE, configuration);
             Lattice.performTest(elements);
         });
