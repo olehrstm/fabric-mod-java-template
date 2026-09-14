@@ -5,6 +5,6 @@
     "managerFilePatterns": ["/\\.gradle(\\.kts)?\\.jinja$/", "/(^|/)gradle\\.properties\\.jinja$/"]
   },
   "github-actions": {
-    "managerFilePatterns": ["/workflows/.+\\.ya?ml\\.jinja$/", "/(^|/)action\\.ya?ml\\.jinja$/"]
+    "managerFilePatterns": ["/workflows/.+\\.ya?ml(\\.jinja)?$/", "/(^|/)action\\.ya?ml(\\.jinja)?$/"]
   }
 }
