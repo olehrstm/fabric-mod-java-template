@@ -1,4 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", ":semanticCommitTypeAll(chore)"]
+  "extends": ["config:recommended", ":semanticCommitTypeAll(chore)"],
+  "gradle": {
+    "managerFilePatterns": ["/\\.gradle(\\.kts)?\\.jinja$/", "/(^|/)gradle\\.properties\\.jinja$/"]
+  },
+  "github-actions": {
+    "managerFilePatterns": ["/workflows/.+\\.ya?ml\\.jinja$/", "/(^|/)action\\.ya?ml\\.jinja$/"]
+  }
 }
